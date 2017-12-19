@@ -12,5 +12,7 @@
         <module>mutilMoudle_javaMoudle</module>
     </modules>
 
-
+    <dependencies>
+        
+    </dependencies>
 </project>
