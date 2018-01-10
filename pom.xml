@@ -10,6 +10,7 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>mutilMoudle_javaMoudle</module>
+        <module>mutilMoudle_javaWebMoudle</module>
     </modules>
 
     <dependencies>
