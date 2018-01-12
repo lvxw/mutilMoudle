@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue_hello</title>
+    <script src="../js/common/vue.js"></script>
+
+</head>
+<body>
+    <div id="app">
+        <ol>
+            <component-name
+                    v-for="item in arr"
+                    v-bind:todo="item"
+                    v-bind:key="item.id">
+            </component-name>
+        </ol>
+    </div>
+    <script>
+        Vue.component('component-name', {
+            props: ['todo'],
+            template: '<div>{{ todo.text }}</div>'
+        })
+        var app = new Vue({
+            el: '#app',
+            data: {
+                arr: [
+                    { id: 0, text: '蔬菜' },
+                    { id: 1, text: '奶酪' },
+                    { id: 2, text: '随便其它什么人吃的东西' }
+                ]
+            }
+        })
+    </script>
+</body>
+</html>

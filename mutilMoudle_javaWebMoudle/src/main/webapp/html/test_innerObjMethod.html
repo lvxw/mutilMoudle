@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue_hello</title>
+    <script src="../js/common/vue.js"></script>
+</head>
+<body>
+
+    <div id="app">
+        {{a}}
+    </div>
+
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                msg: 'Hello Vue!',
+                a:10
+            }
+        });
+
+        vm.$watch('a',function (newValue,oldValue) {
+            alert("a值改变时触发,a的新值为:"+newValue)
+        })
+    </script>
+</body>
+</html>
