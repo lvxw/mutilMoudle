@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue_hello</title>
+    <script src="../js/common/vue.js"></script>
+
+</head>
+<body>
+
+    <div id="app">
+        <p v-if="see">测试v-if</p>
+        <p v-else="see">测试v-else</p>
+
+        <div v-if="see">Now you see me</div>
+        <div v-else>Now you don't</div>
+    </div>
+
+
+
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                msg: 'Hello Vue!',
+                title: 'this is tittle',
+                see: true
+            }
+        });
+    </script>
+</body>
+</html>

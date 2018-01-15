@@ -9,7 +9,7 @@
 <body>
 
     <div id="app">
-        <p v-if="see">测试v-if</p>
+        <a v-bind:href="url">测试v-bind</a>
     </div>
 
     <script>
@@ -18,7 +18,7 @@
             data: {
                 msg: 'Hello Vue!',
                 title: 'this is tittle',
-                see: true
+                'url':'https://www.baidu.com'
             }
         });
     </script>

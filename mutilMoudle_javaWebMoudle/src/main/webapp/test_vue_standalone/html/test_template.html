@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue_hello</title>
+    <script src="../js/common/vue.js"></script>
+
+</head>
+<body>
+
+    <div id="app">
+        <span>{{msg}}</span>            <!-- 渲染html -->
+        <br>
+        <span v-once>{{msg}}</span>     <!--数据只绑定一次-->
+        <br>
+        <span v-html="msg"></span>      <!-- 渲染html -->
+
+        <br>
+        {{number+1}}
+        <br>
+        {{res ? true : false }}         <!-- 模板内使用javaScript -->
+        <br>
+        {{str.split(" ").reverse()}}
+    </div>
+
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                msg: '<Strong>Hello Vue!</Strong>',
+                title: 'this is tittle',
+                number:1,
+                res:true,
+                str:'hello world'
+            }
+        });
+    </script>
+</body>
+</html>

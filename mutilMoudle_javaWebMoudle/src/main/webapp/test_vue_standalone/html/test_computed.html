@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue_hello</title>
+    <script src="../js/common/vue.js"></script>
+
+</head>
+<body>
+
+    <div id="app">
+        {{str.split(" ").reverse()}}
+        <br>
+        {{reserveMothod}}
+        <br>
+        {{now}}
+    </div>
+
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                msg: '<Strong>Hello Vue!</Strong>',
+                title: 'this is tittle',
+                number:1,
+                res:true,
+                str:'hello world'
+            },
+            computed:{
+                reserveMothod:function () {
+                    return this.str.split(" ").reverse().join(',')
+                },
+                now:function(){ //不刷新的情况下只计算一次
+                    return  Date.now()
+                }
+            }
+        });
+    </script>
+</body>
+</html>

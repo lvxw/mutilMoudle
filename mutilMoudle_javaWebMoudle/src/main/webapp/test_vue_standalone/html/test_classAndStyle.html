@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue_hello</title>
+    <script src="../js/common/vue.js"></script>
+
+</head>
+<body>
+
+    <div id="app">
+        <div class="static" v-bind:class="{'active':isActive,'text-danger':hasError }">{{msg}}</div>
+        <div v-bind:class="classObj">{{msg}}</div>
+        <div v-bind:class="[active_arr,text_danger_arr]">{{msg}}</div>
+        <div v-bind:style="{color:red,fontSize:fontSize+'px'}">{{msg}}</div>
+        <div v-bind:style="{color:[red,green],fontSize:fontSize+'px'}">{{msg}}</div>
+    </div>
+
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                msg:'测试class和style',
+                isActive: true,
+                hasError: false,
+                classObj:{
+                    active:true,
+                    text_danger:true
+                },
+                red:'red',
+                green:'green',
+                fontSize:'20',
+                active_arr: 'active',
+                text_danger_arr: 'text-danger',
+                color_arr:'color:green',
+            }
+        });
+    </script>
+</body>
+</html>
