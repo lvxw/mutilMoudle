@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue_hello</title>
+    <script src="../js/common/vue.js"></script>
+
+</head>
+<body>
+
+    <div id="app">
+        <button v-on:click="counter += 1">按钮</button>
+        {{counter}}
+        <br>
+        <button v-on:click="say('hi')">say Hi</button>
+        <button v-on:click="say('what')">say what</button>
+    </div>
+
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                msg: 'Hello Vue!',
+                title: 'this is tittle',
+                counter:0
+            },
+            methods:{
+                say:function(message){
+                    alert(message)
+                }
+            }
+        });
+    </script>
+</body>
+</html>

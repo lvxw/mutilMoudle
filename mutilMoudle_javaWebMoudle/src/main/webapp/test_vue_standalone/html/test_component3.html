@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue_hello</title>
+    <script src="../js/common/vue.js"></script>
+
+</head>
+<body>
+    <div id="app">
+        <child v-bind:my-message="a"></child>
+        <input type="date">
+    </div>
+    <script>
+        var data = { counter: 0 }
+
+        Vue.component('child', {
+            template: '<span>{{myMessage}}</span>',
+            props:['myMessage']
+        })
+
+        var app = new Vue({
+            el: '#app',
+            data:{
+                a:'hello world'
+            }
+        });
+    </script>
+</body>
+</html>

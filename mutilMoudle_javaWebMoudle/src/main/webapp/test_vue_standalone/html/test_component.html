@@ -9,28 +9,30 @@
 <body>
     <div id="app">
         <ol>
-            <component-name
-                    v-for="item in arr"
-                    v-bind:todo="item"
-                    v-bind:key="item.id">
-            </component-name>
+            <div v-for="x in arr">
+                {{x}}
+            </div>
         </ol>
+
+        <my-component v-for="x in arr"></my-component>
+
     </div>
     <script>
-        Vue.component('component-name', {
-            props: ['todo'],
-            template: '<div>{{ todo.text }}</div>'
-        })
+//        Vue.component('my-component', {
+//            template: '<div>A custom component!</div>'
+//        })
+        var Child={
+            template: '<div>A custom component!</div>'
+        }
         var app = new Vue({
             el: '#app',
             data: {
-                arr: [
-                    { id: 0, text: '蔬菜' },
-                    { id: 1, text: '奶酪' },
-                    { id: 2, text: '随便其它什么人吃的东西' }
-                ]
+                arr: ['hadoop','spark','flink','hive'],
+            },
+            components:{
+              'my-component':Child
             }
-        })
+        });
     </script>
 </body>
 </html>
