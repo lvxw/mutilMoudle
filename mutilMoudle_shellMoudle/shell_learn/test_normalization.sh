@@ -11,7 +11,7 @@
 
 if (( $# == 0 ))
 then
-    data_date=`date -d "-1 days ago" +%Y%m%d`
+    data_date=`date -d "-1 days" +%Y%m%d`
 elif [[ $1 == [1-3][0-9][0-9][0-9][0-1][0-9][0-3][0-9] ]]
 then
     data_date=$1
