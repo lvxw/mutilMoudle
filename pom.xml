@@ -27,6 +27,7 @@
     <modules>
         <module>mutilMoudle_javaMoudle</module>
         <module>mutilMoudle_javaWebMoudle</module>
+        <module>mutilMoudle_scalaMoudle</module>
     </modules>
 
     <dependencies>
