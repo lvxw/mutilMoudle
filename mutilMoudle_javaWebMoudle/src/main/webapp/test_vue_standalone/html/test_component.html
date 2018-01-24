@@ -2,37 +2,45 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>vue_hello</title>
+    <title>Title</title>
     <script src="../js/common/vue.js"></script>
-
 </head>
 <body>
-    <div id="app">
-        <ol>
-            <div v-for="x in arr">
-                {{x}}
-            </div>
-        </ol>
-
-        <my-component v-for="x in arr"></my-component>
-
+    <h1>初步识别vue组件</h1>
+    <div id="app1">
+        <greeting></greeting>
     </div>
+
+    <div id="app2">
+        <greeting></greeting>
+    </div>
+
     <script>
-//        Vue.component('my-component', {
-//            template: '<div>A custom component!</div>'
-//        })
-        var Child={
-            template: '<div>A custom component!</div>'
-        }
-        var app = new Vue({
-            el: '#app',
-            data: {
-                arr: ['hadoop','spark','flink','hive'],
+        Vue.component("greeting",{
+            template:`
+                <p>
+                    heloo {{name}}
+                    <button v-on:click="changeName">改名</button>
+                </p>
+            `,
+            data:function(){
+                return {
+                    name:'zhangsan'
+                }
             },
-            components:{
-              'my-component':Child
+            methods:{
+                changeName:function () {
+                    this.name = 'herry'
+                }
             }
+        })
+
+        new Vue({
+            el:'#app1'
         });
+        new Vue({
+            el:'#app2'
+        })
     </script>
 </body>
 </html>

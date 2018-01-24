@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../js/common/vue.js"></script>
+</head>
+<body>
+    <h1>初始化多个Vue实例</h1>
+    <div id="app1">
+        {{title}}<br>
+        {{greet}}
+    </div>
+
+    <div id="app2">
+        {{title}}
+        <button v-on:click="changeTitle">change app1 title</button>
+    </div>
+    <script>
+        var app1 = new Vue({
+            el:'#app1',
+            data:{
+                title:'app1 content'
+            },
+            computed:{
+                greet:function () {
+                    return "hello app1"
+                }
+            }
+        });
+        var app2 = new Vue({
+            el:'#app2',
+            data:{
+                title:'app2 content'
+            },
+            methods:{
+                changeTitle:function () {
+                    app1.title='已经改名'
+                }
+            }
+        })
+    </script>
+</body>
+</html>

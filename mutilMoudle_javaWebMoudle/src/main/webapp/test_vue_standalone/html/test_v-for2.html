@@ -8,59 +8,19 @@
 </head>
 <body>
     <div id="todo-list-example">
-        <input
-                v-model="newTodoText"
-                v-on:keyup.enter="addNewTodo"
-                placeholder="Add a todo"
-        >
-        <ul>
-            <todo-item
-                    v-for="(todo, index) in todos"
-                    v-bind:key="todo.id"
-                    v-bind:title="todo.title"
-                    v-on:remove="todos.splice(index, 1)"
-            ></todo-item>
-        </ul>
+        <template v-for="(user,index) in users">
+            <div v-for="(key,value) in user">{{index+1}}: {{key}} -> {{value}}</div>
+        </template>
     </div>
     <script>
-        Vue.component('todo-item', {
-            template: '\
-                <li>\
-                  {{ title }}\
-                  <button v-on:click="$emit(\'remove\')">X</button>\
-                </li>\
-              ',
-            props: ['title']
-        })
-
         new Vue({
             el: '#todo-list-example',
             data: {
-                newTodoText: '',
-                todos: [
-                    {
-                        id: 1,
-                        title: 'Do the dishes',
-                    },
-                    {
-                        id: 2,
-                        title: 'Take out the trash',
-                    },
-                    {
-                        id: 3,
-                        title: 'Mow the lawn'
-                    }
-                ],
-                nextTodoId: 4
-            },
-            methods: {
-                addNewTodo: function () {
-                    this.todos.push({
-                        id: this.nextTodoId++,
-                        title: this.newTodoText
-                    })
-                    this.newTodoText = ''
-                }
+                users:[
+                    {name:'zhangsan','age':21},
+                    {name:'lisi',age:22},
+                    {name:'wangwu',age:23}
+                ]
             }
         })
     </script>
