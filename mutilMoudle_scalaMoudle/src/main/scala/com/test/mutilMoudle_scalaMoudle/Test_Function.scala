@@ -2,38 +2,18 @@ package com.test.mutilMoudle_scalaMoudle
 
 object Test_Function {
 
-  /**
-    * 普通函数
-    * @param x
-    * @param y
-    * @return
-    */
-  def test(x:Int, y:Int): Int ={
-    x+y
+  def max(x:Int, y:Int)= if(x>y) x else y
+  val max2 = max _
+
+  val max3 = max2
+
+  def max4 =max _
+
+  def main(args: Array[String]): Unit = {
+    println(max(8,5))
+    println(max2)
+    println(max3)
+    println(max3(2,3))
+    println(max4(11,22))
   }
-
-  /**
-    * 匿名函数
-    * @return
-    */
-  def test2 = (x:Int, y:Int) => x + y
-
-
-  /**
-    * 高阶函数——参数为函数
-    * @param f
-    * @return
-    */
-  def test3(f:(Any)=>String):String = {
-    f(4)
-  }
-
-
-  def sum(f:Int=>Int):(Int,Int)=>Int={
-    def sumF(a:Int,b:Int):Int=
-      if(a>b) 0
-      else f(a)+sumF(a+1,b)
-    sumF
-  }
-
 }
