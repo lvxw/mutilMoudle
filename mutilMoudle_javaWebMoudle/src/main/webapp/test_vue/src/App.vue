@@ -1,28 +1,24 @@
 <!--1、模板：html结构-->
 <template>
   <div id="app">
-    <app-header></app-header>
-    <users></users>
-    <app-footer></app-footer>
+    <ul>
+      <li><router-link to="/">Home</router-link></li>
+    </ul>
+    <router-view></router-view>
   </div>
 </template>
 
 <!--2、行为：处理逻辑-->
 <script>
-  import Header from "./components/Header";
-  import Users from "./components/Users"
-  import Footer from "./components/Footer";
   export default {
-    components: {
-      'app-header':Header,
-      'users':Users,
-      'app-footer':Footer
-    },
-    name:'app',
+    name:'app2',
     data(){
       return {
 
       }
+    },
+    methods:{
+
     }
   }
 </script>
